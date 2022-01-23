@@ -29,28 +29,40 @@ function App() {
       <h1 className="my-3">Users</h1>
       <div className="row m-5">
         <div className="col form">
-          <input
-            type="text"
-            placeholder="Name..."
-            onChange={(event) => setName(event.target.value)}
-          />
-          <input
-            type="number"
-            placeholder="Age..."
-            onChange={(event) => setAge(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Username..."
-            onChange={(event) => setUsername(event.target.value)}
-          />
-          <button onClick={createUser}>Create Users</button>
+          <div className="m-3 p-3 border rounded">
+            <div className="mt-3">
+              <input
+                type="text"
+                placeholder="Name..."
+                onChange={(event) => setName(event.target.value)}
+              />
+            </div>
+            <div className="mt-3">
+              <input
+                type="number"
+                placeholder="Age..."
+                onChange={(event) => setAge(event.target.value)}
+              />
+            </div>
+            <div className="mt-3">
+              <input
+                type="text"
+                placeholder="Username..."
+                onChange={(event) => setUsername(event.target.value)}
+              />
+            </div>
+            <div className="mt-3">
+              <button className="btn btn-primary" onClick={createUser}>
+                Create User
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="col users">
+        <div className="col users text-muted">
           {userList.map((user) => {
             return (
               <div className="user border rounded py-3 m-3" key={user.id}>
-                <h4>Name: {user.name}</h4>
+                <h5>Name: {user.name}</h5>
                 <p>age: {user.age}</p>
                 <p>username: {user.username}</p>
               </div>
